@@ -1,4 +1,4 @@
-![My awesome image](NetWeaver.png)
+![My awesome image](assets/NetWeaver.png)
 
 NetWeaver Server
 
