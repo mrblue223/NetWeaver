@@ -39,7 +39,7 @@ class TCPServerGUI:
 
         # Set the window icon
         try:
-            icon_image = Image.open("icons8-server-40.png")
+            icon_image = Image.open("assets/icons8-server-40.png")
             self.app_icon = ImageTk.PhotoImage(icon_image)
             master.iconphoto(False, self.app_icon)
         except FileNotFoundError:
