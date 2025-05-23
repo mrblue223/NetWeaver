@@ -1,6 +1,6 @@
-NetWeaver Server
-
 ![My awesome image](NetWeaver.png)
+
+NetWeaver Server
 
 NetWeaver is a multi-threaded TCP/Web/FTP server with a modern Tkinter-based GUI. It allows you to host generic TCP services, a basic HTTP web server, an HTTPS web server, or an FTP server.
 Features
