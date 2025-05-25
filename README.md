@@ -1,5 +1,5 @@
 The GUI
-![Alt text for the image]()
+![Alt text for the image](    NetWeaver/Netweaver_2/assets/NetWeaver.png)
 
 NetWeaver - Quick Start Guide
 
