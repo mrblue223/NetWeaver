@@ -74,73 +74,16 @@ To run NetWeaver, you need the following:
 
 ## Project-Structure
 
-
-## File Breakdown
-
-### `Netweaver/` (Root Directory)
-This is the top-level directory containing all project files.
-
-### `assets/`
-Contains static assets used by the application, such as icons.
-* `icons8-server-40.png`: The icon used for the GUI application. This image should be downloaded and placed here if not already present.
-
-### `main.py`
-This is the primary entry point for the entire application.
-* Initializes the Tkinter GUI.
-* Starts the server logic.
-* Coordinates between the GUI and the server backend.
-
-### `gui.py`
-Defines the graphical user interface components using Tkinter.
-* Contains the `TCPServerGUI` class, responsible for rendering the server's status, logs, and controls.
-* Handles user interactions with the GUI.
-
-### `constants.py`
-A centralized location for application-wide constants and configurations.
-* Stores global variables, such as default port numbers, buffer sizes, and server addresses.
-* Defines theme settings (e.g., colors, fonts) for the GUI.
-* Any other common configurations shared across modules.
-
-### `server_core.py`
-Encapsulates the fundamental server operations.
-* Manages the main server loop.
-* Handles socket binding and listening for incoming connections.
-* Dispatches incoming connections to appropriate handler modules (e.g., `tcp_handler`, `web_handler`, `ftp_handler`).
-
-### `tcp_handler.py`
-Provides generic handling for raw TCP client connections.
-* Manages the lifecycle of a standard TCP connection.
-* Implements basic send and receive operations for raw TCP data.
-* Could be extended for custom TCP-based protocols.
-
-### `web_handler.py`
-Specialized handler for HTTP/HTTPS web client requests.
-* Parses incoming HTTP/HTTPS requests.
-* Routes requests to appropriate internal functions based on URL paths and methods.
-* Generates HTTP/HTTPS responses.
-
-### `ftp_handler.py`
-Manages FTP (File Transfer Protocol) client commands and data transfers.
-* Handles FTP control connections (commands like `USER`, `PASS`, `LIST`, `RETR`, `STOR`).
-* Manends FTP data connections for actual file transfers.
-* Ensures proper FTP protocol adherence.
-
----
-
-## How to use this `structure.md` file:
-
-1.  **Create the file:** In the root of your `Netweaver` project directory, create a new file named `structure.md`.
-2.  **Copy the content:** Paste the Markdown content provided above into your `structure.md` file.
-3.  **Commit and Push:** Add the `structure.md` file to your Git repository, commit it, and push it to GitHub.
-
-When you navigate to the `structure.md` file on your GitHub repository, it will automatically render the Markdown, displaying your project structure clearly.
-
-**Key GFM considerations applied:**
-* **Code Block for Tree:** The directory tree itself is enclosed in a Markdown code block (```) to preserve its formatting and indentation.
-* **Headings:** `#` and `##` are used for clear section headings.
-* **Lists:** Bullet points (`*`) are used for file breakdowns for readability.
-* **Emphasis:** Code snippets like filenames are enclosed in backticks (`` `filename.py` ``) for inline code highlighting.
-
+Netweaver/
+├── assets/
+│   └── icons8-server-40.png  (GUI icon, download if not present)
+├── main.py                   (Main entry point for the GUI application)
+├── gui.py                    (Contains the Tkinter GUI class: TCPServerGUI)
+├── constants.py              (Stores global variables, theme settings, and common configurations)
+├── server_core.py            (Core server logic: main loop, socket binding, connection dispatching)
+├── tcp_handler.py            (Handles generic TCP client connections)
+├── web_handler.py            (Handles HTTP/HTTPS web client requests)
+└── ftp_handler.py            (Handles FTP client commands and data transfers)
 
 ## Running-the-Application
 
