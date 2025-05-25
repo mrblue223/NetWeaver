@@ -5,15 +5,15 @@ This guide provides a quick overview of how to get the NetWeaver GUI running and
 
 Before running the NetWeaver GUI, you need to install its required Python libraries. A convenient script has been provided for this purpose.
 
-    Save the dependency installation script (e.g., install_deps.py) in the same directory as your NetWeaver project files.
+    Save the dependency installation script (e.g., install_dependencies.py) in the same directory as your NetWeaver project files.
 
     Open your terminal or command prompt.
 
-    Navigate to the directory where you saved install_deps.py.
+    Navigate to the directory where you saved install_dependencies.py.
 
     Run the script using:
 
-    python install_deps.py
+    python3 install_dependencies.py
 
     This will install Pillow, which is necessary for the GUI's icons.
 
