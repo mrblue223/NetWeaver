@@ -4,21 +4,17 @@ The GUI
 ## Table of contents
 
 - [Introduction](#Introduction)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Setup and Installation](#setup-and-installation)
-- [Running the Application](#running-the-application)
-- [Using the GUI](#using-the-gui)
-    - [Server Controls](#server-controls)
-    - [Server Modes](#server-modes)
-        - [Generic TCP Server](#generic-tcp-server)
-        - [Web Server (HTTP)](#web-server-http)
-        - [Web Server (HTTPS)](#web-server-https)
-        - [FTP Server](#ftp-server)
-    - [Log Area](#log-area)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+- [Prerequisites](#Prerequisites)
+- [Project-Structure](#Project-Structure)
+- [Running-the-Application](#Running-the-Application)
+    - [Server-Modes](#Server-Modes)
+        - [Web-Server(HTTP)](#Web-Server(HTTP))
+        - [Web-Server(HTTPS)](#Web-Server(HTTPS))
+        - [FTP-Server](#FTP-Server)
+    - [Log-Area](#Log-Area)
+- [Troubleshooting](#Troubleshooting)
+- [Contributing](#Contributing)
+- [License](#License)
 
 ## NetWeaver - Multi-threaded TCP/Web/FTP Server
 
@@ -76,7 +72,7 @@ To run NetWeaver, you need the following:
     Ensure the assets directory exists:
     Make sure the assets/icons8-server-40.png file is present in the Netweaver/assets/ directory for the GUI icon to display correctly. If not, you can download it or provide your own icon.
 
-## Project Structure
+## Project-Structure
 
 The NetWeaver project is organized into the following directories and files:
 
@@ -91,7 +87,7 @@ Netweaver/
 ├── web_handler.py            (Handles HTTP/HTTPS web client requests)
 └── ftp_handler.py            (Handles FTP client commands and data transfers)
 
-## Running the Application
+## Running-the-Application
 
 To start the NetWeaver server GUI, navigate to the Netweaver directory and run the main.py script:
 
@@ -117,7 +113,7 @@ Generic TCP Server
 
     Configuration: Only requires a Server Port.
 
-## Web Server (HTTP)
+## Web-Server(HTTP)
 
     Purpose: Serves static files over HTTP.
 
@@ -127,7 +123,7 @@ Generic TCP Server
 
         Web Root Dir: Click "Browse..." to select the directory containing your web files (e.g., index.html, styles.css).
 
-## Web Server (HTTPS)
+## Web-Server(HTTPS)
 
     Purpose: Provides secure web serving using SSL/TLS.
 
@@ -141,7 +137,7 @@ Generic TCP Server
 
         SSL Key File: Click "Browse..." to select your SSL private key file (e.g., key.pem).
 
-## FTP Server
+## FTP-Server
 
     Purpose: Allows clients to transfer files using the FTP protocol.
 
@@ -158,7 +154,7 @@ Generic TCP Server
 
         Password: ftppass
 
-## Log Area
+## Log-Area
 
 The large text area at the bottom of the main content frame displays real-time logs from the server. This includes:
 
