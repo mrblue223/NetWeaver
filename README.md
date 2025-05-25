@@ -1,6 +1,26 @@
 The GUI
 ![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
 
+## Table of contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Setup and Installation](#setup-and-installation)
+- [Running the Application](#running-the-application)
+- [Using the GUI](#using-the-gui)
+    - [Server Controls](#server-controls)
+    - [Server Modes](#server-modes)
+        - [Generic TCP Server](#generic-tcp-server)
+        - [Web Server (HTTP)](#web-server-http)
+        - [Web Server (HTTPS)](#web-server-https)
+        - [FTP Server](#ftp-server)
+    - [Log Area](#log-area)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+
+
 NetWeaver - Multi-threaded TCP/Web/FTP Server
 
 A versatile, multi-threaded server application with a graphical user interface, supporting generic TCP, HTTP/HTTPS, and FTP protocols.
