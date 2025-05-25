@@ -73,8 +73,7 @@ To run NetWeaver, you need the following:
     Make sure the assets/icons8-server-40.png file is present in the Netweaver/assets/ directory for the GUI icon to display correctly. If not, you can download it or provide your own icon.
 
 ## Project-Structure
-
-Refer to the structure.md file.
+![Alt text for the image](Netweaver_2/assets/structure.png)
 
 ## Running-the-Application
 
