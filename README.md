@@ -1,9 +1,12 @@
 The GUI
 ![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
 
+The GUI
+![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
+
 ## Table of contents
 
-- [Features](#Introduction)
+- [Introduction](#Introduction)
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
@@ -20,27 +23,11 @@ The GUI
 - [Contributing](#contributing)
 - [License](#license)
 
-
-NetWeaver - Multi-threaded TCP/Web/FTP Server
+## NetWeaver - Multi-threaded TCP/Web/FTP Server
 
 A versatile, multi-threaded server application with a graphical user interface, supporting generic TCP, HTTP/HTTPS, and FTP protocols.
 Table of Contents
 
-    Introduction
-
-    Features
-
-    Installation
-
-    Usage
-
-    Configuration
-
-    Contributing
-
-    License
-
-    Contact
 
 ## Introduction
 
@@ -71,70 +58,134 @@ Features
 
     Basic FTP Commands: Supports USER, PASS, PWD, CWD, LIST, RETR, STOR, PORT, and PASV commands.
 
-Installation
+## Prerequisites
 
-NetWeaver is a Python application. To run it, you need Python 3 installed on your system. You will also need to install the Pillow library for GUI icon support.
+To run NetWeaver, you need the following:
+
+    Python 3: The application is developed in Python 3.
+
+    run the install_depencies.py script
+
+## Setup and Installation
 
     Clone the repository (or download the files):
 
     git clone https://github.com/mrblue223/NetWeaver.git
     cd Netweaver
 
-  
-
     Install dependencies:
-
     python3 install_dependencies.py
 
     Ensure the assets directory exists:
     Make sure the assets/icons8-server-40.png file is present in the Netweaver/assets/ directory for the GUI icon to display correctly. If not, you can download it or provide your own icon.
 
-Usage
+## Project Structure
 
-To start the NetWeaver server GUI, simply run the main.py script:
+The NetWeaver project is organized into the following directories and files:
+
+Netweaver/
+├── assets/
+│   └── icons8-server-40.png  (GUI icon, download if not present)
+├── main.py                   (Main entry point for the GUI application)
+├── gui.py                    (Contains the Tkinter GUI class: TCPServerGUI)
+├── constants.py              (Stores global variables, theme settings, and common configurations)
+├── server_core.py            (Core server logic: main loop, socket binding, connection dispatching)
+├── tcp_handler.py            (Handles generic TCP client connections)
+├── web_handler.py            (Handles HTTP/HTTPS web client requests)
+└── ftp_handler.py            (Handles FTP client commands and data transfers)
+
+## Running the Application
+
+To start the NetWeaver server GUI, navigate to the Netweaver directory and run the main.py script:
 
 python main.py
 
-Once the GUI launches:
+Using the GUI
 
-    Select Server Mode: Choose between "Generic TCP", "Web Server (HTTP)", "Web Server (HTTPS)", or "FTP Server" from the sidebar.
+Once the GUI launches, you can configure and control the server using its intuitive interface.
+Server Controls
 
-    Configure Settings:
+    Start Server: Initiates the server on the specified port and mode.
 
-        Server Port: Enter the desired port number.
+    Stop Server: Shuts down the running server.
 
-        Web Root Dir / FTP Root Dir: If using Web or FTP modes, click "Browse..." to select the directory from which files will be served.
+    Server Status: Displays the current status of the server (running/stopped), including its IP, port, mode, and configured root directories/SSL files.
 
-        SSL Cert File / SSL Key File: If using HTTPS mode, click "Browse..." to select your SSL certificate (.pem) and key (.pem) files.
+## Server Modes
 
-    Start Server: Click the "Start Server" button in the sidebar.
+You can select the desired server mode from the sidebar. The input fields in the main content area will dynamically adjust based on your selection.
+Generic TCP Server
 
-    Monitor Log: Observe server activity, client connections, and any errors in the log area.
+    Purpose: For basic TCP communication and testing.
 
-    Stop Server: Click the "Stop Server" button to shut down the server.
+    Configuration: Only requires a Server Port.
 
-FTP Server Credentials:
-The FTP server currently uses hardcoded credentials:
+## Web Server (HTTP)
 
-    Username: ftpuser
+    Purpose: Serves static files over HTTP.
 
-    Password: ftppass
+    Configuration:
 
-Configuration
+        Server Port: The port for the HTTP server (e.g., 80, 8080).
 
-All primary configuration is done through the GUI. The constants.py file holds default values and theme settings, but runtime configurations (port, root directories, SSL files, server mode) are managed via the GUI inputs.
+        Web Root Dir: Click "Browse..." to select the directory containing your web files (e.g., index.html, styles.css).
 
-    SERVER_PORT: Configured via the GUI.
+## Web Server (HTTPS)
 
-    WEB_ROOT_DIR: Configured via the GUI for Web/HTTPS modes.
+    Purpose: Provides secure web serving using SSL/TLS.
 
-    FTP_ROOT_DIR: Configured via the GUI for FTP mode.
+    Configuration:
 
-    SSL_CERT_FILE: Configured via the GUI for HTTPS mode.
+        Server Port: The port for the HTTPS server (e.g., 443, 8443).
 
-    SSL_KEY_FILE: Configured via the GUI for HTTPS mode.
+        Web Root Dir: Click "Browse..." to select the directory containing your web files.
 
-Contributing
+        SSL Cert File: Click "Browse..." to select your SSL certificate file (e.g., server.pem).
+
+        SSL Key File: Click "Browse..." to select your SSL private key file (e.g., key.pem).
+
+## FTP Server
+
+    Purpose: Allows clients to transfer files using the FTP protocol.
+
+    Configuration:
+
+        Server Port: The port for the FTP server (e.g., 21).
+
+        FTP Root Dir: Click "Browse..." to select the directory that will serve as the root for FTP operations.
+
+    FTP Server Credentials:
+    The FTP server currently uses hardcoded credentials for authentication:
+
+        Username: ftpuser
+
+        Password: ftppass
+
+## Log Area
+
+The large text area at the bottom of the main content frame displays real-time logs from the server. This includes:
+
+    Informational messages ([*], often in blue)
+
+    Success messages ([+], often in green)
+
+    Warning messages ([-], often in yellow)
+
+    Error messages ([-], often in red)
+
+## Troubleshooting
+
+    "Could not bind to port..." error: This usually means the port is already in use by another application, or you don't have the necessary permissions to use that port (e.g., ports below 1024 often require root/administrator privileges). Try a different port number (e.g., 9999).
+
+    "Web Root Directory is invalid or not set." / "FTP Root Directory is invalid or not set.": Ensure you have selected a valid, existing directory for the respective server mode before starting the server.
+
+    "SSL Certificate/Key file is invalid or not set.": Verify that your .pem certificate and key files exist and are correctly formatted.
+
+    Server not responding: Check the log area for any error messages. Ensure no firewall is blocking the chosen port.
+
+    GUI icon not showing: Make sure Pillow is installed and the assets/icons8-server-40.png file is in the correct location relative to main.py.
+
+## Contributing
 
 Contributions are welcome! If you find a bug, have a feature request, or want to contribute code, please follow these guidelines:
 
@@ -154,10 +205,6 @@ Contributions are welcome! If you find a bug, have a feature request, or want to
 
         Push your branch and open a pull request.
 
-License
+## License
 
-This project is licensed under The Unlicense - see the LICENSE file for details.
-
-For any questions or inquiries, please contact:
-
-    Project Repository: https://github.com/mrblue223/NetWeaver.git
+This project is licensed under the MIT License - see the LICENSE.md file for details.
