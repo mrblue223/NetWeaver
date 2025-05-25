@@ -1,80 +1,143 @@
 The GUI
 ![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
 
-NetWeaver - Quick Start Guide
+NetWeaver - Multi-threaded TCP/Web/FTP Server
 
-This guide provides a quick overview of how to get the NetWeaver GUI running and how to use it to host a simple website.
-1. Install Dependencies
+A versatile, multi-threaded server application with a graphical user interface, supporting generic TCP, HTTP/HTTPS, and FTP protocols.
+Table of Contents
 
-Before running the NetWeaver GUI, you need to install its required Python libraries. A convenient script has been provided for this purpose.
+    Introduction
 
-    Save the dependency installation script (e.g., install_dependencies.py) in the same directory as your NetWeaver project files.
+    Features
 
-    Open your terminal or command prompt.
+    Installation
 
-    Navigate to the directory where you saved install_dependencies.py.
+    Usage
 
-    Run the script using:
+    Configuration
+
+    Contributing
+
+    License
+
+    Contact
+
+Introduction
+
+NetWeaver is a Python-based server application designed to provide flexible network services through a user-friendly graphical interface. It supports handling multiple client connections concurrently across different protocols, including a generic TCP server, a web server (HTTP and HTTPS), and an FTP server. The application aims to offer a simple yet powerful tool for testing network communications and serving files.
+Features
+
+    Multi-threaded Architecture: Handles multiple client connections simultaneously without blocking the main application thread.
+
+    Multiple Server Modes:
+
+        Generic TCP Server: For basic TCP communication and testing.
+
+        Web Server (HTTP): Serves static files from a specified root directory.
+
+        Web Server (HTTPS): Provides secure web serving using SSL/TLS with user-provided certificate and key files.
+
+        FTP Server: Supports basic FTP commands for file listing, retrieval, and storage, with user authentication.
+
+    Intuitive Graphical User Interface (GUI): Built with Tkinter, featuring a modern dark theme for easy configuration and real-time logging.
+
+    Real-time Logging: Displays server activity, client connections, requests, and errors directly within the GUI.
+
+    File System Security: Implements checks to prevent directory traversal attacks for both web and FTP serving.
+
+    Configurable Root Directories: Allows users to specify separate root directories for web and FTP content.
+
+    SSL/TLS Support: Enables secure communication for the HTTPS server mode.
+
+    Basic FTP Commands: Supports USER, PASS, PWD, CWD, LIST, RETR, STOR, PORT, and PASV commands.
+
+Installation
+
+NetWeaver is a Python application. To run it, you need Python 3 installed on your system. You will also need to install the Pillow library for GUI icon support.
+
+    Clone the repository (or download the files):
+
+    git clone https://github.com/mrblue223/NetWeaver.git
+    cd Netweaver
+
+  
+
+    Install dependencies:
 
     python3 install_dependencies.py
 
-    This will install Pillow, which is necessary for the GUI's icons.
+    Ensure the assets directory exists:
+    Make sure the assets/icons8-server-40.png file is present in the Netweaver/assets/ directory for the GUI icon to display correctly. If not, you can download it or provide your own icon.
 
-2. Run the NetWeaver GUI
+Usage
 
-Once the dependencies are installed, you can launch the NetWeaver GUI.
+To start the NetWeaver server GUI, simply run the main.py script:
 
-    Ensure you have the assets folder with the icons8-server-40.png file in your project directory (as mentioned in the more detailed README).
+python main.py
 
-    In your terminal or command prompt, navigate to the NetWeaver project's root directory (where main.py is located).
+Once the GUI launches:
 
-    Run the main application:
+    Select Server Mode: Choose between "Generic TCP", "Web Server (HTTP)", "Web Server (HTTPS)", or "FTP Server" from the sidebar.
 
-    python main.py
+    Configure Settings:
 
-    The NetWeaver GUI window should now appear.
+        Server Port: Enter the desired port number.
 
-3. Host a Website (HTTP/HTTPS)
+        Web Root Dir / FTP Root Dir: If using Web or FTP modes, click "Browse..." to select the directory from which files will be served.
 
-NetWeaver can function as a simple HTTP or HTTPS web server.
-Hosting an HTTP Website:
+        SSL Cert File / SSL Key File: If using HTTPS mode, click "Browse..." to select your SSL certificate (.pem) and key (.pem) files.
 
-    Select Mode: In the left sidebar of the NetWeaver GUI, click on "Web Server (HTTP)".
+    Start Server: Click the "Start Server" button in the sidebar.
 
-    Configure Port: In the main content area, enter a port number for your web server in the "Server Port" field (e.g., 8080).
+    Monitor Log: Observe server activity, client connections, and any errors in the log area.
 
-    Set Web Root Directory:
+    Stop Server: Click the "Stop Server" button to shut down the server.
 
-        Click the "Browse..." button next to "Web Root Dir:".
+FTP Server Credentials:
+The FTP server currently uses hardcoded credentials:
 
-        Select the folder on your computer that contains your website files (e.g., index.html, styles.css, images). This folder will be the root of your website.
+    Username: ftpuser
 
-    Start Server: Click the "Start Server" button in the left sidebar.
+    Password: ftppass
 
-    Access Website: Once the log area shows messages indicating the server is listening, open a web browser and go to http://localhost:YOUR_PORT_NUMBER (replace YOUR_PORT_NUMBER with the port you entered, e.g., http://localhost:8080).
+Configuration
 
-Hosting an HTTPS Website (Secure):
+All primary configuration is done through the GUI. The constants.py file holds default values and theme settings, but runtime configurations (port, root directories, SSL files, server mode) are managed via the GUI inputs.
 
-For HTTPS, you will need an SSL certificate and a private key file (both typically in .pem format).
+    SERVER_PORT: Configured via the GUI.
 
-    Select Mode: In the left sidebar, click on "Web Server (HTTPS)".
+    WEB_ROOT_DIR: Configured via the GUI for Web/HTTPS modes.
 
-    Configure Port: Enter a port number for your HTTPS server (e.g., 8443).
+    FTP_ROOT_DIR: Configured via the GUI for FTP mode.
 
-    Set Web Root Directory: Similar to HTTP, click "Browse..." and select your website's root folder.
+    SSL_CERT_FILE: Configured via the GUI for HTTPS mode.
 
-    Select SSL Certificate File:
+    SSL_KEY_FILE: Configured via the GUI for HTTPS mode.
 
-        Click the "Browse..." button next to "SSL Cert File:".
+Contributing
 
-        Select your SSL certificate file (e.g., server.pem).
+Contributions are welcome! If you find a bug, have a feature request, or want to contribute code, please follow these guidelines:
 
-    Select SSL Key File:
+    Report Bugs: Open an issue on the GitHub repository with a clear description of the bug, steps to reproduce it, and expected behavior.
 
-        Click the "Browse..." button next to "SSL Key File:".
+    Suggest Features: Open an issue to propose new features or enhancements.
 
-        Select your SSL private key file (e.g., key.pem). This file must correspond to your certificate.
+    Submit Pull Requests:
 
-    Start Server: Click the "Start Server" button in the left sidebar.
+        Fork the repository.
 
-    Access Website: Once the server is running, open a web browser and go to https://localhost:YOUR_PORT_NUMBER (e.g., https://localhost:8443). Your browser might show a warning about the certificate being self-signed or untrusted, which is normal for locally generated certificates.
+        Create a new branch for your changes (git checkout -b feature/your-feature-name or bugfix/your-bug-name).
+
+        Make your changes and ensure the code adheres to existing style.
+
+        Write clear, concise commit messages.
+
+        Push your branch and open a pull request.
+
+License
+
+This project is licensed under The Unlicense - see the LICENSE file for details.
+
+For any questions or inquiries, please contact:
+
+    Project Repository: https://github.com/mrblue223/NetWeaver.git
