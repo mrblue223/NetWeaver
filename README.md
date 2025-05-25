@@ -3,7 +3,7 @@ The GUI
 
 ## Table of contents
 
-- [Features](#features)
+- [Features](#Introduction)
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
@@ -42,7 +42,7 @@ Table of Contents
 
     Contact
 
-Introduction
+## Introduction
 
 NetWeaver is a Python-based server application designed to provide flexible network services through a user-friendly graphical interface. It supports handling multiple client connections concurrently across different protocols, including a generic TCP server, a web server (HTTP and HTTPS), and an FTP server. The application aims to offer a simple yet powerful tool for testing network communications and serving files.
 Features
