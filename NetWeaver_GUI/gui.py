@@ -28,7 +28,7 @@ class TCPServerGUI:
 
         # Set the window icon
         try:
-            icon_image = Image.open("assets/icons8-server-40.png")
+            icon_image = Image.open("NetWeaver_GUI/assets/icons8-server-40.png")
             self.app_icon = ImageTk.PhotoImage(icon_image)
             master.iconphoto(False, self.app_icon)
         except FileNotFoundError:
@@ -168,7 +168,7 @@ class TCPServerGUI:
 
         # Load and display the server icon
         try:
-            self.server_icon_image = Image.open("assets/icons8-server-40.png")
+            self.server_icon_image = Image.open("NetWeaver_GUI/assets/icons8-server-40.png")
             self.server_icon_photo = ImageTk.PhotoImage(self.server_icon_image)
             self.icon_label = ttk.Label(
                 self.sidebar_frame, image=self.server_icon_photo,
