@@ -1,3 +1,6 @@
+The GUI
+![Alt text for the image]()
+
 NetWeaver - Quick Start Guide
 
 This guide provides a quick overview of how to get the NetWeaver GUI running and how to use it to host a simple website.
