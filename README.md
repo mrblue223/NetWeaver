@@ -1,9 +1,6 @@
 The GUI
 ![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
 
-The GUI
-![Alt text for the image](Netweaver_2/assets/NetWeaver.png)
-
 ## Table of contents
 
 - [Introduction](#Introduction)
