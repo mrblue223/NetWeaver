@@ -16,7 +16,7 @@ The GUI
 - [Contributing](#Contributing)
 - [License](#License)
 
-## NetWeaver - Multi-threaded TCP/Web/FTP Server (WARNING MAKE SURE TO RUN THE IN A VIRTUAL ENV)
+## NetWeaver - Multi-threaded TCP/Web/FTP Server (WARNING MAKE SURE TO RUN THE install_dependencies.py IN A VIRTUAL ENV)
 
 A versatile, multi-threaded server application with a graphical user interface, supporting generic TCP, HTTP/HTTPS, and FTP protocols.
 
